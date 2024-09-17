@@ -64,6 +64,10 @@ Dont make these objects metal looking! it crashes flightgear apon loading them i
         <object-name>Right_Keel_1</object-name>
         <object-name>left-elevator_0</object-name>
         <object-name>right-elevator_0</object-name>
+
+
+		        <object-name>left-elevator_1</object-name>
+        <object-name>right-elevator_1</object-name>
         <object-name>Fuselage_0</object-name>
         <object-name>Right_Wing_1</object-name>
         <object-name>Left_Wing_1</object-name>
@@ -76,7 +80,7 @@ Dont make these objects metal looking! it crashes flightgear apon loading them i
         <object-name>left-flap_0</object-name>
         <object-name>right-flap_0</object-name>
         <object-name>Fuselage_1</object-name>
-		<object-name>nose</object-name>
+		<object-name>nose-top</object-name>
 		<object-name>nose-bottom-left</object-name>
 		<object-name>nose-bottom-right</object-name>
 		<object-name>right-slat_0</object-name>
@@ -87,8 +91,8 @@ Dont make these objects metal looking! it crashes flightgear apon loading them i
 		<object-name>left-flap_1</object-name>
 		<object-name>right-flap_1</object-name>
 
-		<object-name>left-elevator_1</object-name>
-		<object-name>right-elevator_1</object-name>
+		<object-name>Right_Stabilizer</object-name>
+		<object-name>Right_Stabilizer</object-name>
 		<object-name>left-aileron_1</object-name>
 		<object-name>right-aileron_1</object-name>
 		<object-name>Left_Rocket_Bay_D1</object-name>
@@ -159,7 +163,7 @@ Dont make these objects metal looking! it crashes flightgear apon loading them i
 
 <animation>
   <type>material</type>
-  <object-name>Body</object-name>
+  <object-name>Fuselage_2</object-name>
   <property-base>sim/model/livery</property-base>
   <texture-prop>texture-AKfuselage</texture-prop>
   <texture>Liveries/AK-BODY.png</texture>
@@ -204,8 +208,6 @@ Dont make these objects metal looking! it crashes flightgear apon loading them i
   <type>material</type>
 <object-name>Right_Prewing</object-name>
  <object-name>Left_Prewing</object-name>
- <object-name>Left_Stabilizer</object-name>
- <object-name>Right_Stabilizer</object-name>
 <object-name>Left_Eleron01</object-name>
  <object-name>Left_Eleron02</object-name>
 <object-name>Right_Eleron01</object-name>
@@ -215,11 +217,39 @@ Dont make these objects metal looking! it crashes flightgear apon loading them i
   <texture>Liveries/wing.png</texture>
 </animation>
 
+
 <animation>
   <type>material</type>
-<object-name>nose</object-name>
- <object-name>nose-bottom-right</object-name>
- <object-name>nose-bottom-left</object-name>
+ <object-name>left-elevator_0</object-name>
+  <property-base>sim/model/livery</property-base>
+  <texture-prop>texture-left-elev-top</texture-prop>
+  <texture>Liveries/maps/leftelev.dds</texture>
+</animation>
+
+<animation>
+  <type>material</type>
+ <object-name>right-elevator_0</object-name>
+  <property-base>sim/model/livery</property-base>
+  <texture-prop>texture-right-elev-top</texture-prop>
+  <texture>Liveries/maps/rightelev.dds</texture>
+</animation>
+
+
+
+<animation>
+  <type>material</type>
+<object-name>nose-bottom-right</object-name>
+<object-name>nose-bottom-left</object-name>
+  <property-base>sim/model/livery</property-base>
+  <texture-prop>texture-nose</texture-prop>
+  <texture>Liveries/wing.png</texture>
+</animation>
+
+
+
+<animation>
+  <type>material</type>
+<object-name>nose-top</object-name>
   <property-base>sim/model/livery</property-base>
   <texture-prop>texture-nose</texture-prop>
   <texture>Liveries/wing.png</texture>
@@ -241,13 +271,37 @@ Dont make these objects metal looking! it crashes flightgear apon loading them i
 
 <animation>
   <type>material</type>
-  <object-name>Left_Wing</object-name>
- <object-name>Right_Wing</object-name>
+  <object-name>Left_Wing_1</object-name>
+
 
   <property-base>sim/model/livery</property-base>
   <texture-prop>texture-wing</texture-prop>
   <texture>Liveries/wing.png</texture>
 </animation>	
+
+
+<animation>
+  <type>material</type>
+  <object-name>Right_Wing_1</object-name>
+
+
+  <property-base>sim/model/livery</property-base>
+  <texture-prop>texture-wing-right</texture-prop>
+  <texture>Liveries/wing.png</texture>
+</animation>
+
+
+
+<animation>
+  <type>material</type>
+  <object-name>sides</object-name>
+
+
+  <property-base>sim/model/livery</property-base>
+  <texture-prop>texture-sides</texture-prop>
+  <texture>Liveries/elevs.png</texture>
+</animation>	
+
 	<!-- MP sound call -->
   <sound><path>Aircraft/F-22/Sounds/mp-sound.xml</path></sound>
   
@@ -813,6 +867,31 @@ Use below instead
 		<object-name>BAYLEFT-axis</object-name> <!--This works SOOO GOOD!!-->
 		</axis>
 	</animation>
+	<animation>
+		<type>rotate</type>
+
+		<object-name>leftmidbay</object-name>
+		<property>sim/multiplay/generic/int[12]</property>
+		<interpolation>
+		<!--	<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry> -->
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-10</dep>
+			</entry>
+		</interpolation>
+		<axis>   
+		<object-name>mbaydoor-axis-L</object-name> <!--This works SOOO GOOD!!-->
+		</axis>
+	</animation>
+
+
 
 
 	<animation>
@@ -972,6 +1051,67 @@ Use below instead
 
 
 <!--Gun Door-->
+
+	<animation>
+		<type>select</type>
+		<object-name>fueldoorL</object-name>
+		
+				<object-name>fueldoorR</object-name>
+		<condition>
+			<greater-than>
+		<property>fdm/jsbsim/fcs/refuel</property>
+				<value>0.0000000001</value>
+			</greater-than>
+		</condition>
+	
+	</animation>	
+
+	<animation>
+		<type>rotate</type>
+		<object-name>fueldoorL</object-name>
+		<property>fdm/jsbsim/fcs/refuel</property>
+		<interpolation>
+		<!--	<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry> -->
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-120</dep>
+			</entry>
+		</interpolation>
+		<axis>   
+		<object-name>fueldoor-L-axis</object-name> <!--This works SOOO GOOD!!-->
+		</axis>
+	</animation>
+	
+	
+		<animation>
+		<type>rotate</type>
+		<object-name>fueldoorR</object-name>
+		<property>fdm/jsbsim/fcs/refuel</property>
+		<interpolation>
+		<!--	<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry> -->
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>120</dep>
+			</entry>
+		</interpolation>
+		<axis>   
+		<object-name>fueldoor-R-axis</object-name> <!--This works SOOO GOOD!!-->
+		</axis>
+	</animation>
 
 	<animation>
 		<type>rotate</type>
@@ -1523,6 +1663,51 @@ FR
 	</animation>
 
 <!-- Main gear animations -->
+rearwheelsaxis
+
+	<animation>
+		<type>spin</type>
+		<object-name>nwheel2</object-name>
+
+			<condition>
+			<greater-than>
+				<property>gear/gear[1]/position-norm</property>
+				<value>0.999999999999</value>
+			</greater-than>
+		</condition>
+		<property>gear/gear/rollspeed-ms</property>
+  <factor>25</factor>
+
+          <center>
+            <x-m>-3.66829</x-m>
+            <y-m> 0</y-m>   <!--I still dont know how to get these numbers in AC3d. Snail got these for nose gear turning fyi-->
+            <z-m>0.00083</z-m>
+        </center>
+
+		<axis>   
+		<object-name>frontwheelsaxis</object-name>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>spin</type>
+		<object-name>backwheels</object-name>
+			<condition>
+			<greater-than>
+				<property>gear/gear[1]/position-norm</property>
+				<value>0.999999999999</value>
+			</greater-than>
+		</condition>
+		<property>gear/gear/rollspeed-ms</property>
+  <factor>25</factor>
+
+		<axis>   
+		<object-name>rearwheelsaxis</object-name>
+		</axis>
+	</animation>
+
+
+
 
 	<animation>
 		<type>select</type>
@@ -2430,9 +2615,9 @@ FR
 <!-- Nose gear turning -->
 <animation>
         <type>rotate</type>
-        <object-name>Nose_Gear_Cylinde</object-name>
-	<object-name>Nose_Wheel_Disk</object-name>
-	<object-name>Nose_Wheel_Pnevmatic</object-name>
+
+
+	<object-name>nwheel</object-name>
         <property>controls/flight/rudder</property>
         <offset-deg>0</offset-deg>
         <factor>-60</factor>
